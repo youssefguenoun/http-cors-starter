@@ -20,7 +20,7 @@ import java.io.IOException;
 public class CorsResponseFilter implements Filter {
 
     private @Value("${http.cors.allow.credentials:true}") boolean allowCredentials;
-    private @Value("${http.cors.allow.headers:Origin}") String allowHeaders;
+    private @Value("${http.cors.allow.headers:Origin, Content-Type, Accept, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method}") String allowHeaders;
     private @Value("${http.cors.allow.methods:GET, POST, DELETE, OPTIONS, HEAD, PATCH}") String allowMethods;
     private @Value("${http.cors.allow.origin:*}") String allowOrigin;
     private @Value("${http.cors.max.age:1209600}") String maxAge;
